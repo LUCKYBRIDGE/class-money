@@ -6,6 +6,10 @@
 
 ## 문서 안내
 - [서비스 벤치마킹](docs/research/benchmark-2026-11.md): 공식 출처 기반 사례, 참고할 기능, 한계, 검증 상태.
+- [심층 비교 분석 v2](docs/research/deep-analysis-2026-11.md): 확인된 사실/시사점/비도입 요소, 서비스별 교육·운영 분석.
+- [경제 엔진·정책](docs/product/economy-engine-and-policies.md): 경제 밸런스 계산, 거래 정책, 학생 공정성.
+- [교사·학생 사용 시나리오](docs/product/teacher-student-journeys.md): 화면 플로우 및 실패/복구 시나리오.
+- [평가표와 검증 계획](docs/research/verification-and-scorecard.md): 증거 수준, 실측 과제, 후속 사용성 검증.
 - [제품 요구사항 및 학습 설계](docs/product/requirements.md): 역할, 흐름, 단계별 기능, 안전·공정성·접근성.
 - [기술 설계 및 실행 계획](docs/architecture/implementation-plan.md): 데이터 모델, 원장/거래 안전성, 권한, 검증 시나리오.
 - [Craft Anything 조사 프로토콜](docs/research/craft-anything-protocol.md): 실제 화면 증거 수집·비교를 위한 후속 조사 체크리스트.
