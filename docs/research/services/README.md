@@ -1,5 +1,25 @@
 # 서비스별 심층 분석 인덱스
 
+## Canonical 서비스 폴더
+
+앞으로 앱·웹별 정리는 [서비스별 Canonical Product Folders](CANONICAL.md)를 시작점으로 사용한다.
+
+각 서비스 폴더 안에서 페이지/내비게이션, UI·UX/버튼, 기능/상태/흐름, 파일·폴더/기술구조, 얽힌 문제 해결방식, 근거/미확인을 같은 형식으로 관리한다.
+
+- [ClassCoin](classcoin/README.md)
+- [ClassBank](classbank/README.md)
+- [Cashroom](cashroom/README.md)
+- [Banqer Primary](banqer-primary/README.md)
+- [ClassCents](classcents/README.md)
+- [My Classroom Economy](my-classroom-economy/README.md)
+- [ClassDojo](classdojo/README.md)
+- [Greenlight](greenlight/README.md)
+- [NatWest Rooster Money](rooster-money/README.md)
+- [Revolut Kids & Teens](revolut-kids-teens/README.md)
+- [토스 유스](toss-youth/README.md)
+- [YNAB](ynab/README.md)
+
+
 > 별도 문서: [서비스별 UI·UX / 복잡성 해소 구조 분석](ux/README.md) — 기능이 얽히는 지점, 정보구조, 상태, 승인, 오류복구, 모바일 UX를 앱·웹별로 분리 분석.
 
 기준일: 2026-11-08

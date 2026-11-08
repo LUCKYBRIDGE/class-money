@@ -5,6 +5,7 @@
 초등학교 교실에서 학생이 **일·소득·소비·저축·지출·선택·공동체 경제**를 체험하고 교사는 간단한 조작으로 학급 경제를 운영할 수 있게 하는 웹 앱을 기획합니다.
 
 ## 문서 안내
+- [앱·웹별 Canonical 분석 폴더](docs/research/services/CANONICAL.md): 서비스마다 페이지·내비게이션, UI·UX·버튼, 기능·상태·흐름, 기술·파일 구조, 복잡성 해결방식, 근거를 동일한 폴더 규격으로 정리.
 - [서비스 벤치마킹](docs/research/benchmark-2026-11.md): 공식 출처 기반 사례, 참고할 기능, 한계, 검증 상태.
 - [심층 비교 분석 v2](docs/research/deep-analysis-2026-11.md): 확인된 사실/시사점/비도입 요소, 서비스별 교육·운영 분석.
 - [서비스별 독립 심층 분석](docs/research/services/README.md): ClassCoin, ClassBank, Cashroom, Banqer, ClassCents, My Classroom Economy, ClassDojo, Greenlight, Rooster Money, Revolut Kids & Teens, 토스 유스, YNAB을 각각 별도 문서로 분석.
