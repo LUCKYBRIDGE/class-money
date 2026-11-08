@@ -224,3 +224,141 @@ Class Money가 아무리 교육적으로 뛰어나도 교사가 매일 학생 25
 
 ## 공식 근거
 - https://www.classcents.com/
+
+
+## 심화 보완: 12개 분석축
+
+### A. 사용자와 권한
+ClassCents의 가장 중요한 권한 선택은 학생 로그인이 없어도 경제가 완전히 돌아간다는 점이다.
+
+Class Money는 세 모드를 지원하는 것이 좋다.
+- Teacher-only
+- Shared-device student
+- Personal student login
+
+기능의 핵심이 학생 계정 존재에 종속되지 않아야 한다.
+
+### B. 핵심 상태
+직업:
+배정 → 수행확인 선택 → Payday → 자동지급
+
+보상:
+교사 Give/Deduct → 원장기록 → 필요시 Undo
+
+Reward:
+활성 → 학생 선택/교사 대리 → redeem
+
+Savings:
+지갑 → savings/goal 이동
+
+각 상태를 단순 balance 조작이 아니라 거래객체로 남기는 것이 중요하다.
+
+### C. 교사 JTBD
+- roster를 빠르게 넣기
+- 반복급여를 잊지 않기
+- 수업 중 빠르게 지급
+- 로그인 문제 없이 운영
+- 실수를 되돌리기
+- 학기말 데이터를 export
+
+이 여섯 개는 Class Money MVP 성공기준으로 직접 사용할 수 있다.
+
+### D. 학생 JTBD
+학생이 로그인한다면:
+- 현재 Balance
+- Job
+- Shop
+- Savings/Goal
+- Transactions
+를 단순하게 본다.
+
+로그인하지 않는 학생도 경제에서 소외되지 않아야 한다.
+
+### E. 여러 학급 Balance 공유
+ClassCents는 동일 학생의 balance가 여러 classroom에서 공유된다고 설명한다.
+
+Class Money에서는 기본적으로 이 정책을 채택하지 않는다. 이유:
+- 담임반 경제와 교과전담 경제가 서로 다른 규칙일 수 있음
+- 한 반의 인플레이션이 다른 반에 전이
+- 거래책임 소재 불명확
+
+학교 전체 공용화폐를 만들 때만 명시적으로 wallet scope를 school로 확장한다.
+
+### F. 마이너스 잔액
+공식 예시에 음수 balance가 보인다.
+
+Class Money:
+- 일반 wallet은 0 미만 금지
+- debt 모듈만 별도 부채계정
+- insufficient funds를 명시적으로 표시
+
+이것이 초등 사용자에게 더 명료하다.
+
+### G. Reason 중심 거래
+저장된 Reason으로 Give/Deduct하는 구조는 수업 중 매우 유용하다.
+
+Class Money는 금액 프리셋보다 '사유+금액' 템플릿을 저장하는 편이 낫다.
+
+예:
+도서정리 완료 +10
+주간 직업급여 +50
+특별 프로젝트 +20
+
+교사는 나중에 사유별 통계도 볼 수 있다.
+
+### H. 자동급여의 조건
+Job done을 먼저 표시해야 급여를 받게 할 수 있는 점은 직업 모델을 유연하게 만든다.
+
+Class Money 직업 지급방식:
+- unconditional scheduled
+- student check + auto
+- teacher approval
+세 종류가 적절하다.
+
+### I. 개인정보와 공유기기
+인쇄 로그인 카드와 이메일 없는 계정은 학교환경에 매우 적합하다.
+
+추가 요구:
+- 카드 분실 시 즉시 재발급
+- 기존 credential 폐기
+- 공유기기 자동로그아웃
+- 학생 전환버튼
+- 화면에 비밀번호 장시간 노출 금지
+
+### J. 교육적 깊이 보완
+ClassCents의 운영 UX는 간결하지만 Class Money는 여기에:
+- 거래 전/후 잔액
+- 저축 기회비용
+- 주간 회고
+- 경제 밸런스
+를 더해 교육적 차별화를 만들 수 있다.
+
+### K. 제품결정
+Adopt:
+- teacher-only
+- roster paste/import
+- login cards
+- automatic payday
+- group/whole-class give
+- reason template
+- undo/export
+
+Adapt:
+- goals
+- leaderboard
+- multi-class identity
+
+Avoid:
+- 자동 지갑통합
+- 공개자산순위
+- 일반지갑 음수 허용
+
+### L. 남은 실측
+- 25명 roster import 시간
+- login card 재발급
+- payday 실패
+- job done 조건
+- group 지급 실제 단계
+- undo의 감사로그
+- student login 없는 상태에서 reward 전달
+- 공용기기 세션
