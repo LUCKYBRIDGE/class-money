@@ -272,3 +272,73 @@ Avoid:
 - recurring chore
 - child view의 남은 일정
 - 저학년 사용성
+
+## V4 심층 해부 — 공동체 책임을 돈으로 오염시키지 않는 법
+
+### 1. Allowance chores와 Extra earners의 구분이 교육적으로 중요하다
+
+Rooster는 정기용돈과 연결된 책임과 별도의 추가수입 과업을 구분한다.
+
+교실에서도 모든 행동을 돈으로 가격화하면:
+- 규칙을 지키는 이유가 돈이 됨
+- 친구를 돕는 행동도 보상 없이는 안 하게 됨
+- 교사가 매 행동을 평가해야 함
+
+따라서 Class Money 활동은 최소 네 유형으로 구분할 가치가 있다.
+
+1. 공동체 기본책임: 금전보상 없음
+2. 정기직업: 정기급여
+3. 추가과업: 건별보상
+4. 봉사/기여: 비금전 인정 또는 공동체기금
+
+### 2. 부분 급여는 공정해 보이지만 분쟁이 많을 수 있다
+
+Rooster는 과업 완료비율에 따라 allowance를 일부 지급할 수 있다.
+
+교실에서 이를 기계적으로 적용하면:
+- 결석
+- 업무량 차이
+- 친구의 방해
+- 교사의 확인누락
+같은 요소가 급여를 흔든다.
+
+Class Money는 percentage pay를 고급설정으로 두고 기본은:
+- 수행기준 충족 시 전액
+- 미충족 시 교사 검토
+가 안전하다.
+
+### 3. Overdue와 Skip은 교실에서도 중요하다
+
+공식 chores 구조에는 Overdue와 Skip이 있다.
+
+Class Money 과업에서도:
+- overdue
+- skipped with reason
+- excused
+를 구분해야 한다.
+
+결석학생을 단순 미완료로 처리하면 안 된다.
+
+### 4. 추가과업의 기회 공정성
+
+Extra earner가 인기 학생이나 빠른 학생에게 집중되면 경제격차가 커진다.
+
+Quest 분배 정책 후보:
+- 모두 가능
+- 선착순
+- 추첨
+- 최근 참여 적은 학생 우선
+- 교사 지정
+
+선착순은 가장 간단하지만 가장 공정한 방식은 아니다.
+
+### 5. 최종 판단
+
+Rooster의 가장 중요한 교훈은:
+‘무엇을 돈으로 보상할지’ 자체가 경제교육 설계라는 점이다.
+
+Class Money는 화폐기능보다 먼저 활동의 의미를 분류해야 한다.
+
+근거:
+- https://roostermoney.com/feature/chores-guide/
+- https://support.roostermoney.com/en/articles/2943417-linking-chores-to-allowance
