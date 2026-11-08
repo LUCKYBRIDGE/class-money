@@ -7,6 +7,7 @@
 ## 문서 안내
 - [서비스 벤치마킹](docs/research/benchmark-2026-11.md): 공식 출처 기반 사례, 참고할 기능, 한계, 검증 상태.
 - [심층 비교 분석 v2](docs/research/deep-analysis-2026-11.md): 확인된 사실/시사점/비도입 요소, 서비스별 교육·운영 분석.
+- [서비스별 독립 심층 분석](docs/research/services/README.md): ClassCoin, ClassBank, Cashroom, Banqer, ClassCents, My Classroom Economy, ClassDojo, Greenlight, Rooster Money, Revolut Kids & Teens, 토스 유스, YNAB을 각각 별도 문서로 분석.
 - [경제 엔진·정책](docs/product/economy-engine-and-policies.md): 경제 밸런스 계산, 거래 정책, 학생 공정성.
 - [교사·학생 사용 시나리오](docs/product/teacher-student-journeys.md): 화면 플로우 및 실패/복구 시나리오.
 - [평가표와 검증 계획](docs/research/verification-and-scorecard.md): 증거 수준, 실측 과제, 후속 사용성 검증.
