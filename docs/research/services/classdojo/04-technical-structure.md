@@ -1,37 +1,83 @@
 # ClassDojo — 파일·폴더·기술 구조
 
-**증거 수준:** B — 공식 조직 일부 공개, Points 본체 source 비공개
+**증거 수준:** B — 공식 GitHub 조직/부분 source 확인, 현재 Points 본체 source 비공개
 
-## 공개 source 판정
+## 공식 GitHub organization
 
-- 공식 org classdojo 확인.
-- policies/infra/library repos는 있으나 현재 Points source가 아님.
+- github.com/classdojo
 
-## 외부에서 확인되는 기술 모듈
+## 직접 확인한 공개 repository 유형
 
-- Class/Roster
-- Student Selector
-- Group Selector
-- Skill/Reason Preset
-- Quick Event
-- Event Log
-- Report Read Model
-- Visibility Policy
+- policies
+- agenda
+- database
+- photo-collage
+- RabbitMQ/S3 관련 utility
+- 기타 infra/library
 
-## 파일·폴더 기록 원칙
+### classdojo/policies 실제 확인
 
-- 실제 공식 repository가 있으면 **실제 path와 file name**을 적는다.
-- 제품 본체 source가 비공개면 위 목록은 실제 folder tree가 아니라 외부 동작으로 확인되는 **logical module boundary**다.
-- framework, database, backend language, hosting을 근거 없이 추정하지 않는다.
+```text
+policies/
+├─ README.md
+├─ child-privacy.md
+├─ premium-features.md
+├─ privacy.md
+├─ security.md
+├─ terms.md
+├─ third-party-service-providers.md
+└─ website-privacy.md
+```
 
-## 현재 확인하지 못한 내부구조
+README는 이 repository가 Terms/Privacy 변경이력을 공개하기 위한 목적임을 명시한다.
 
-- 현재 Points frontend stack
-- 실제 mobile/web component 구조
-- realtime/report backend
+따라서 Points UI/engine source가 아니다.
+
+## 외부에서 확인되는 Points logical modules
+
+```text
+ClassDojo Points
+├─ Class / Roster
+├─ Student Selector
+├─ Group Selector
+├─ Skills
+├─ Quick Point Event
+├─ Notes
+├─ Undo
+├─ Reports
+└─ Visibility / Family Settings
+```
+
+실제 내부 folder tree가 아니라 공개 기능을 설명하는 모듈 경계다.
+
+## Class Money 기술 대응
+
+```text
+teacher/
+├─ student-selector/
+├─ group-selector/
+└─ quick-award/
+
+domain/
+├─ reason-presets/
+├─ transactions/
+├─ batches/
+└─ reversals/
+
+read-models/
+└─ reports/
+```
+
+특히:
+- StudentGroup = 대상 선택
+- GroupAccount = 공동기금
+
+을 별도 도메인으로 둔다.
+
+## 현재 확인 불가
+- 현재 frontend framework
+- mobile/web architecture
+- point storage schema
+- realtime transport
+- report aggregation backend
 - DB/cache
-- 프로젝터 실제 화면
-
-## Class Money 구현으로 옮길 때
-
-이 서비스의 내부 구현을 복제하지 않는다. 확인된 제품 경계와 상태모델만 우리 도메인 모듈 설계의 참고로 사용한다.
