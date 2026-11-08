@@ -215,6 +215,12 @@ Craft Anything 자체의 현재 상태상 Clean Room live build가 아직 모든
 - **토스 유스**: 한국 청소년 금융 정보계층
 - **YNAB**: 목적 기반 예산 사고
 
+## Product Anatomy / Dossier
+
+기능 목록과 UI 분석을 합쳐 서비스 전체를 시스템으로 해부한 문서는 [Product Anatomy 인덱스](dossiers/README.md)에 정리했다.
+
+각 dossier는 역할, 도메인 객체, 기능 의존관계, 대표 플로우, 상태모델, 자동화, 권한, 오류복구, 학습모델, Class Money 전환까지 같은 형식으로 정리한다.
+
 ## UI·UX 전용 심층 분석
 
 기능 목록과 별개로 각 서비스가 복잡한 기능을 화면과 흐름에서 어떻게 풀었는지는 [UI·UX 분석 인덱스](ui-ux/README.md)에 분리해 두었다.
