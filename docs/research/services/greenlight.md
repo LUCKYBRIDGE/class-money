@@ -189,3 +189,108 @@ Class Money가 이를 초등 교실에 적용하면:
 - https://help.greenlight.com/hc/en-us/articles/50527840580379-How-do-I-pay-my-child-per-chore-and-split-the-earnings
 - https://help.greenlight.com/hc/en-us/articles/360009173153-How-do-Savings-Goals-work-How-do-I-set-them-up
 - https://help.greenlight.com/hc/en-us/articles/45088782307867-How-do-I-manage-my-child-s-account-permissions
+
+
+## 심화 보완: 12개 분석축
+
+### A. 사용자와 권한
+Greenlight는 보호자가 자녀 금융범주와 권한을 관리하는 구조다. 교실에 그대로 적용하지 않되 '돈 이동 권한'과 '보기 권한'을 구분하는 패턴은 참고할 가치가 있다.
+
+Class Money:
+- 자기 저축 이동: 학생 가능
+- 상점 주문: 학생 요청
+- 고액/특수거래: 교사 승인
+- 정책 변경: 교사만
+
+### B. 돈의 버킷 모델
+Spend, Savings, Give, Goal 등 목적별로 돈을 나눈다.
+
+Class Money 계좌구조:
+- available
+- savings
+- goal-specific subaccount
+- classroom/public fund
+를 별도로 둘 수 있다.
+
+총자산과 사용가능액을 분리하는 것이 중요하다.
+
+### C. 수입 상태전이
+Chore 설정 → 완료 → 지급 → allocation → 각 bucket 반영
+
+Class Money에서는:
+직업/퀘스트 완료 → 지급 확정 → 학생 자동배분 규칙 → 지갑/저축/기여 분개
+로 만들 수 있다.
+
+### D. 학생 JTBD
+- 얼마 벌었는가
+- 얼마 쓸 수 있는가
+- 무엇을 위해 모으는가
+- 목표까지 얼마나 남았는가
+
+이 네 질문은 Class Money 학생 홈의 핵심이다.
+
+### E. 자동배분의 교육성
+학생이 미리 저축비율을 결정하면 돈을 받은 뒤 남으면 저축하는 행동보다 계획적이다.
+
+Class Money는 자동배분을 '교사가 정해주는 규칙'보다 학생의 선택으로 두고 주기적으로 수정/회고하게 하는 편이 좋다.
+
+### F. 목표저축 상태
+목표생성 → 자금이동 → 진행 → 달성 → 사용/유지/종료
+
+달성 후 행동이 중요하다. 목표 완료 즉시 자동 구매보다 학생이 다시 선택하도록 한다.
+
+### G. 잠금과 자율성
+저축에서 돈을 빼는 마찰은 충동소비를 줄이지만 과도하면 교사가 돈을 통제하는 경험이 된다.
+
+권고:
+- 기본은 학생 자율
+- 인출 시 목표영향 미리보기
+- 선택적으로 승인 잠금
+
+### H. 실제 금융과 모의경제 경계
+Greenlight의 실제 카드·투자기능은 Class Money 범위 밖이다.
+
+Class Money에서 '현실적인 금융'은 실제 돈을 연결하는 것이 아니라:
+- 정확한 거래
+- 명확한 잔액
+- 목표
+- 선택 결과
+를 모사하는 것이다.
+
+### I. 실패모드
+- allocation 합이 100%가 아님
+- goal 삭제 시 잔액 처리
+- 자동배분 대상 goal이 종료됨
+- 급여가 0/음수
+- class fund 배분 후 환불
+
+각 경우의 fallback 계정을 명시해야 한다.
+
+### J. UI 정보계층
+총자산보다 사용가능액이 학생에게 더 중요하다.
+
+Class Money:
+큰 숫자 = 오늘 사용가능
+작은 카드 = 저축/목표/공동체
+하단 = 최근 거래
+
+### K. 제품결정
+Adopt:
+- bucket
+- goal
+- auto allocation
+- permissioned requests
+
+Adapt:
+- protected savings
+
+Avoid:
+- 실제 금융망
+- 투자/카드 연동
+
+### L. 남은 실측
+- allocation 화면의 이해성
+- goal 달성 후 흐름
+- 자녀/보호자 화면차이
+- permission 변경
+- 여러 goal의 정보밀도
