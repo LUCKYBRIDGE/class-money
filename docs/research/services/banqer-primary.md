@@ -349,3 +349,147 @@ Avoid by default:
 - progress status 계산방식
 - student dashboard의 메뉴밀도
 - leaderboard 기본 노출과 비활성화 경험
+
+## V4 심층 해부 — 기능을 교육과정처럼 여는 시스템
+
+### 1. Banqer의 핵심 객체는 Account보다 Module이다
+
+Banqer는 금융기능을 단순 메뉴로 취급하지 않는다. 교사가 Module을 활성화하면 학생에게 콘텐츠가 열리고 관련 Quiz와 시뮬레이션 경험이 이어진다.
+
+공식 안내는 Basic Income과 Expenses를 제외하면 보통 한 번에 하나의 Module만 켜고, 장기 운영에서는 2~4주 간격으로 개방할 것을 권한다.
+
+이것은 기술 기능보다 학습 순서가 제품의 정보구조를 지배한다는 뜻이다.
+
+Class Money는 기능마다:
+- locked
+- teacher_preview
+- active
+- completed
+상태를 가져야 한다.
+
+### 2. 기능 숨김은 단순 UI 설정이 아니다
+
+학생이 세금을 아직 배우지 않았다면 메뉴에서 세금 버튼을 회색으로 보이게 하는 것보다 완전히 숨기는 편이 낫다.
+
+이유:
+- 현재 학습개념에 집중
+- 금융용어의 조기 과부하 방지
+- 교사가 ‘다음 단계’를 통제
+- 학생간 진도차이 감소
+
+Class Money의 모듈 활성화는 UI visibility, 관련 거래 rule, 수업자료, 회고 질문을 한 번에 변경해야 한다.
+
+### 3. Teacher Preview의 가치
+
+Banqer는 교사가 Module을 켜기 전 Intro Video 등으로 미리 내용을 확인하도록 한다.
+
+Class Money도 복잡한 기능을 켤 때 단순 토글을 제공하면 안 된다.
+
+예: 세금 켜기
+1. 개념 설명
+2. 학생에게 무엇이 보이는지
+3. 돈 흐름 예시
+4. 추천 수업 질문
+5. 예상 경제 영향
+6. 활성화
+
+이 흐름이 있어야 교사가 이해하지 못한 금융기능을 무심코 켜는 일을 줄일 수 있다.
+
+### 4. Job Market는 Career Education과 Economy의 교차점이다
+
+Banqer의 CV, 지원, 채용, 직업 계약, 급여주기, positions 구조는 단순 학급 역할보다 진로교육에 가깝다.
+
+Class Money는 직업 기능에 두 모드를 둘 수 있다.
+
+운영 모드:
+- 교사가 바로 배정
+- 책임 역할 중심
+
+학습 모드:
+- 공고
+- 지원
+- 지원 이유/CV
+- 채용
+- 계약기간
+- 급여
+- 회고
+
+같은 데이터 구조를 두 깊이로 사용할 수 있다.
+
+### 5. Leaderboard는 동기화와 낙인의 양면성
+
+Banqer는 savings, net worth, credit score 등을 leaderboard로 보여주고 일부는 끌 수 있다고 공식 문서가 설명한다.
+
+교육적으로 문제는 자산 자체가 경쟁성과로 변한다는 점이다.
+
+Class Money는 자산을 공개 경쟁에 쓰지 않는다.
+
+대신:
+- 개인 목표 달성률
+- 공동 학급 저축 목표
+- 학습모듈 완료
+- 경제 퀴즈 배지
+등을 공개 가능한 성취로 분리한다.
+
+### 6. 학습 진도와 경제 진도는 서로 다르다
+
+학생 A가 돈은 많이 모았지만 금융개념 퀴즈와 회고를 거의 하지 않을 수 있고,
+학생 B는 돈은 적지만 합리적 선택을 잘 설명할 수 있다.
+
+따라서 Class Money 대시보드에는:
+- Economy state
+- Learning state
+를 별도로 둬야 한다.
+
+교사는 ‘부유한 학생’을 잘하는 학생으로 오해하지 않게 된다.
+
+### 7. 장기 운영 주기
+
+Banqer는 주 1회 학생 접속, 약 2주마다 새 학습을 권장한다.
+
+Class Money에 맞는 기본 cadence 제안:
+- 매일: 교사 승인/빠른지급
+- 매주: 급여 + 상점 + 저축
+- 2~4주: 새 경제모듈
+- 매월: 경제건강 점검
+- 학기말: 종합 회고
+
+이 주기를 제품의 캘린더와 onboarding에 내장할 가치가 있다.
+
+### 8. 초등 저학년부터 사용할 수 있다는 의미
+
+Banqer 공식 도움말은 6세 정도의 어린 학생에게는 고급 세금·금융기능보다 classroom currency 수준이 적합하다고 설명한다.
+
+Class Money도 동일 계정체계를 학년별로 완전히 다른 복잡도로 보여줄 수 있다.
+
+1~2학년:
+벌기 / 쓰기 / 모으기
+
+3~4학년:
+직업 / 목표 / 정기지출
+
+5~6학년:
+세금 / 공공예산 / 시장 / 이자
+
+### 9. 최종 판단
+
+Banqer가 보여주는 가장 깊은 설계 원리는:
+경제기능은 메뉴가 아니라 수업의 순서다.
+
+Class Money는 따라서 기능별 플래그보다 Module Engine을 가져야 한다.
+
+Module은:
+- 개념
+- 권장학년
+- prerequisite
+- 활성화 조건
+- 관련 기능
+- 수업카드
+- 회고
+를 묶어야 한다.
+
+추가 근거:
+- https://banqer.co/nz/blog/how-to-plan-banqer-primary
+- https://primary.banqer.co/nz/help/enabling-modules
+- https://primary.banqer.co/nz/help/class-leaderboards
+- https://banqer.co/nz/primary/faqs
