@@ -351,3 +351,175 @@ Avoid initially:
 - refund 시 쿠폰 복원
 - undo의 연쇄범위
 - 모바일 정보밀도
+
+## V4 심층 해부 — 자동화와 사고과정의 공존
+
+### 1. Cashroom의 핵심 역설
+
+Cashroom은 교사 업무는 최대한 자동화하면서 학생에게는 의도적으로 마찰을 남긴다.
+
+교사:
+- 급여 자동
+- bills 자동
+- 요청은 한 Bell에 집약
+- Undo 제공
+
+학생:
+- 모든 거래에서 새 잔액 계산
+- 직업 지원
+- 저축목표
+- 구매 판단
+- 신용/대출 계산
+
+즉 좋은 자동화는 ‘모든 클릭을 없애는 것’이 아니라 누구의 클릭을 없애고 누구의 사고를 남길지 구분한다.
+
+Class Money의 원칙:
+교사의 반복 계산과 중복입력은 자동화.
+학생의 선택·예측·회고는 남김.
+
+### 2. One Bell 패턴의 구조적 가치
+
+Cashroom의 Alert Bell은 job applications, loan requests, store orders, below-zero 상태를 한곳에 모은다.
+
+이것은 단순 알림 UI가 아니라 업무 모델이다.
+
+교사에게 필요한 것은 기능별 메뉴가 아니라 의사결정 대기열이다.
+
+Class Money의 Teacher Inbox 객체는:
+- type
+- subject student
+- requested action
+- amount
+- risk level
+- created_at
+- due_at
+- related transaction
+- approve/reject/resolve
+를 공통으로 가져야 한다.
+
+그렇게 하면 상점·직업·거래·대출을 하나의 운영 패턴으로 처리할 수 있다.
+
+### 3. Undo는 기능마다 다른 의미를 가진다
+
+Cashroom 도움말은 일반 bonus/fine은 History에서 undo하지만 purchase, loan, auction은 각 기능 화면에서 되돌린다고 설명한다.
+
+이것은 매우 중요한 설계 단서다.
+
+왜냐하면 연결된 거래는 단순 반대 금액 한 번으로 끝나지 않기 때문이다.
+
+예:
+상점 구매 취소:
+- 지갑 환불
+- 재고 복원
+- 쿠폰 복원
+- 주문 상태 변경
+
+경매 취소:
+- 최고입찰 hold 해제
+- 낙찰 상태 해제
+
+대출 취소:
+- 원금
+- 이자
+- 상환 일정
+- 신용 이벤트
+전체 연쇄 복구
+
+Class Money는 UI에서는 ‘취소’ 한 버튼처럼 보여도 도메인별 reversal policy를 별도로 가져야 한다.
+
+### 4. 자동 작업의 회계 안정성
+
+로그인하지 않아도 급여·청구가 실행된다는 것은 서버 쪽 예약작업이 시스템의 핵심이라는 뜻이다.
+
+필수 설계:
+- scheduled rule
+- execution run
+- student-level execution item
+- idempotency key
+- retry count
+- failure reason
+- next run
+- paused state
+
+교사 화면에는 단순 ‘자동급여 ON’이 아니라:
+- 다음 실행일
+- 대상 25명
+- 예상 총액
+- 마지막 성공
+- 실패 0건
+을 보여주는 것이 안전하다.
+
+### 5. 기본 Student Job의 공정성
+
+모든 학생에게 Student라는 기본 직업을 줄 수 있는 구조는 매우 중요한 공정성 장치다.
+
+경제에 참여하려면 돈이 필요한데, 직업 채용 경쟁에서 탈락한 학생에게 수입이 없다면 경제 학습 자체에서 배제된다.
+
+Class Money 권고:
+- 기본 참여소득 또는 학생 기본 역할
+- 추가 직업은 추가 책임과 추가소득
+- 필수지출은 기본 참여소득만으로도 감당 가능하도록 경고
+
+### 6. 신용점수는 사실상 행동평가가 될 수 있다
+
+Cashroom의 300~850 credit score는 실제 금융개념을 잘 모사한다. 그러나 교실에서는 위험하다.
+
+학생에게는:
+‘나는 신용점수 520인 학생’
+이라는 정체성 낙인이 생길 수 있다.
+
+Class Money에서 대출을 도입하더라도 점수 대신 상태 중심이 더 낫다.
+- 현재 대출 없음
+- 상환 중
+- 지난 3회 제때 납부
+- 다음 납부일
+
+즉 서열점수보다 사건기록을 보여준다.
+
+### 7. 게임화의 경계
+
+Cashroom Silver에는 raffle, mystery box, auction, badge, avatar가 들어간다.
+
+이 구조는 흥미 유지를 위해 경제에 오락요소를 넣는 전형적인 방식이다.
+
+Class Money 판단:
+- Badge: 학습 이정표이므로 적극 검토
+- Auction: 공급/수요 수업에 유용
+- Coupon: 소비자 의사결정에 유용
+- Raffle/Mystery box: 확률보상이므로 기본 제외
+
+‘재미’라는 이유로 같은 우선순위를 주면 안 된다.
+
+### 8. 수학 확인의 가장 좋은 일반화
+
+Cashroom의 math check를 초등용으로 일반화하면:
+
+현재 120
+변화 -35
+예상 잔액 ?
+실제 거래 후 85
+목표까지 15 남음
+
+여기에 학생에게 한 번 더 묻는다.
+‘지금 구매한 이유는 무엇인가?’
+
+계산 + 선택이 함께 있어야 경제교육이 된다.
+
+### 9. 최종 판단
+
+Cashroom에서 Class Money가 가장 깊게 가져올 것은
+‘교사는 자동화하고 학생은 사고하게 한다’는 비대칭 설계다.
+
+이를 구현하려면:
+- Teacher Inbox
+- 도메인별 Undo
+- 예약작업 실행로그
+- 기본 참여소득
+- 학생별 학습마찰 설정
+이 핵심 인프라가 되어야 한다.
+
+추가 근거:
+- https://cashroomapp.com/
+- https://cashroomapp.com/help
+- https://cashroomapp.com/getting-started
+- https://cashroomapp.com/pricing
