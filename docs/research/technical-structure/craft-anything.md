@@ -1,7 +1,7 @@
 # Craft Anything — 파일·폴더·기술 구조
 
 정확도: **A — 공식 source 직접 확인**
-공식 repository: storytol d/craft-anything의 실제 tree/source를 직접 확인.
+공식 repository: storytold/craft-anything의 실제 tree/source를 직접 확인.
 
 ## Repository 상위 구조
 
