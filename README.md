@@ -9,6 +9,11 @@
 - [심층 비교 분석 v2](docs/research/deep-analysis-2026-11.md): 확인된 사실/시사점/비도입 요소, 서비스별 교육·운영 분석.
 - [서비스별 독립 심층 분석](docs/research/services/README.md): ClassCoin, ClassBank, Cashroom, Banqer, ClassCents, My Classroom Economy, ClassDojo, Greenlight, Rooster Money, Revolut Kids & Teens, 토스 유스, YNAB을 각각 별도 문서로 분석.
 - [경제 엔진·정책](docs/product/economy-engine-and-policies.md): 경제 밸런스 계산, 거래 정책, 학생 공정성.
+- [Economy Kernel v4](docs/architecture/economy-kernel-v4.md): 이중원장, account, hold, scheduler, reversal, 정책 버전 등 거래 커널 설계.
+- [교사 운영 시스템 v4](docs/product/teacher-operations-v4.md): Teacher Inbox, 빠른 지급, 설정 마법사, 실패 복구, 학기 종료.
+- [학생 학습 루프 v4](docs/product/student-learning-loop-v4.md): Earn→Plan→Decide→Predict→Act→Reflect의 학습 경험.
+- [교실경제 위험 등록부 v4](docs/research/economic-risk-register-v4.md): 인플레이션, 격차, 낙인, 권리 상품화, 소셜·거래 위험.
+- [실측 지표 v4](docs/research/benchmark-metrics-v4.md): Craft Anything/직접 실측을 위한 동일 시나리오와 증거 등급.
 - [교사·학생 사용 시나리오](docs/product/teacher-student-journeys.md): 화면 플로우 및 실패/복구 시나리오.
 - [평가표와 검증 계획](docs/research/verification-and-scorecard.md): 증거 수준, 실측 과제, 후속 사용성 검증.
 - [제품 요구사항 및 학습 설계](docs/product/requirements.md): 역할, 흐름, 단계별 기능, 안전·공정성·접근성.
