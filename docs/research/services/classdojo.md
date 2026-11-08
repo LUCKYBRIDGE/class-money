@@ -220,3 +220,112 @@ Class Money는 경제 엔진은 더 엄격하게, 수업 중 지급 UI는 ClassD
 - https://help.classdojo.com/hc/en-us/articles/209619243-How-to-Undo-a-Point
 - https://help.classdojo.com/hc/en-us/articles/205647205-How-to-Redeem-Class-Points
 - https://help.classdojo.com/hc/en-us/sections/200472659-Class-Points-and-Reports
+
+
+## 심화 보완: 12개 분석축
+
+### A. 사용자와 권한
+ClassDojo는 교사, 학생, 보호자, 학교관리 역할을 가진다. Class Money에서 참고할 핵심은 보호자 기능 자체보다 같은 학생 데이터가 역할에 따라 다르게 노출된다는 점이다.
+
+권고:
+- 교사: 전체 거래와 설정
+- 학생: 자기 거래
+- 보호자 기능이 생긴다면 요약 중심
+- 공개 화면: 비식별 또는 최소정보
+
+### B. 포인트 이벤트 상태
+Skill 선택 → Point event 생성 → Note 선택 → Report 반영 → 필요시 Undo → 필요시 Redeem
+
+Class Money는 이를:
+Reason → Transaction → Statement → Reversal → Purchase
+로 대응할 수 있다.
+
+거래가 뒤에서 원장객체가 되더라도 앞의 교사 UX는 이 정도로 단순해야 한다.
+
+### C. 교사 JTBD
+- 수업을 멈추지 않고 즉시 기록
+- 여러 학생에게 같은 피드백
+- 실수 즉시 복구
+- 나중에 이유를 확인
+- 필요시 기간별 보고서
+
+이 업무는 Class Money의 금융기능보다 빈도가 높으므로 초고속 인터랙션이 필요하다.
+
+### D. 학생 JTBD
+ClassDojo 학생은 자신의 포인트와 report를 본다. Class Money 학생은 여기에 경제적 문맥을 추가해야 한다.
+
+즉:
+'오늘 +5'
+가 아니라
+'오늘 도서정리 직업 +5, 가용잔액 35'
+가 되어야 한다.
+
+### E. Group 모델
+Group은 재사용 가능한 학생 집합이다.
+
+Class Money에서는 group 자체에 돈을 저장하기보다 학생별 거래를 생성하고 group action을 공통 부모 ID로 연결한다. 학급 공동기금은 별도 account로 처리한다.
+
+### F. Undo
+ClassDojo의 Undo 기대감은 매우 중요하다. 교사는 수업 중 실수할 수 있다.
+
+Class Money는 UI에서는 Undo를 제공하되:
+원거래 삭제가 아닌 reversal transaction을 생성해야 한다.
+
+### G. 정보노출
+포인트 공개범위를 조정하는 기능은 경제앱에 더 중요하다.
+
+Class Money 프로젝터 모드:
+- 이름 표시 선택
+- 잔액 숨김 기본
+- 공동목표 표시
+- 개인 순위 숨김
+
+### H. 행동경제 위험
+행동 feedback을 돈과 직접 연결하면 teacher attention bias가 경제격차로 누적된다.
+
+Class Money는 교사 보너스의:
+- 학생별 지급 빈도
+- 총액 편중
+을 교사에게만 알려줄 수 있다. 이는 평가가 아니라 운영 편향 점검이다.
+
+### I. Report의 데이터모델
+Point report는 이벤트 history다. Class Money statement도 단순 현재값이 아니라:
+- 날짜
+- 거래종류
+- 이유
+- 금액
+- 이전/이후잔액
+- actor
+를 가진 event view여야 한다.
+
+### J. UI 패턴
+학생 타일을 반복적으로 누르는 화면은 학급교사가 익숙하게 사용할 수 있다.
+
+Class Money 금융 설정화면과 빠른 지급화면을 분리해야 한다.
+- Quick action layer
+- Admin/accounting layer
+
+한 화면에 합치면 수업 중 사용성이 무너진다.
+
+### K. 제품결정
+Adopt:
+- 타일선택
+- 그룹
+- reason preset
+- 즉시 undo
+- reports
+
+Adapt:
+- redeem
+
+Avoid:
+- 행동점수=경제성공
+- 공개 총점 경쟁을 잔액경쟁으로 변환
+
+### L. 남은 실측
+- 개인/그룹/전체 실제 조작수
+- Undo 노출시간
+- 모바일 vs 웹 차이
+- point report 상세
+- 프로젝터 설정
+- 보호자 공개옵션의 세분화
