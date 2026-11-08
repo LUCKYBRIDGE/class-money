@@ -232,3 +232,120 @@ Class Money의 차별화:
 - https://banqer.co/au/primary/how-it-works
 - https://banqer.co/nz/primary/how-it-works
 - https://primary.banqer.co/nz/help/the-class-store
+
+
+## 심화 보완: 12개 분석축
+
+### A. 사용자와 권한
+Banqer는 교사 대시보드, 학생 대시보드, 공동교사 구조를 갖고 학생별 progress와 거래정보를 교사가 볼 수 있다. 학생은 고유 username/password로 접근한다.
+
+Class Money는 계정 접근뿐 아니라 학습모듈 공개권한도 권한 모델에 포함해야 한다.
+
+### B. 모듈 상태
+Banqer의 중요한 상태는 거래보다 학습모듈 자체다.
+
+비활성 → 교사 preview → 활성 → 학생 학습 → quiz/activity 진행 → 완료
+
+Class Money의 세금·저축·시장·대출도 이처럼 '기능 ON/OFF'가 아니라 '수업단계' 상태를 가져야 한다.
+
+### C. 교사 JTBD
+- 이번 달 어떤 금융개념을 열지 결정
+- 학생 진행상황 확인
+- 직업시장 운영
+- 수입/비용 규칙 관리
+- 학생의 실제 선택을 수업 대화로 연결
+
+따라서 교사 홈에는 경제통계만큼 모듈 진도와 다음 수업 제안이 중요하다.
+
+### D. 학생 JTBD
+학생은 돈을 많이 모으는 것이 아니라:
+- 새 개념을 이해
+- 시뮬레이션에서 선택
+- 결과를 경험
+- 퀴즈/활동으로 확인
+하는 반복을 한다.
+
+Class Money도 기능마다 이 네 단계를 설계하면 금융교육 정체성이 강해진다.
+
+### E. 직업시장
+job type, pay frequency, positions, CV, application, direct assignment, unemployment filter, terminate all contracts가 별도 상태로 관리된다.
+
+Class Money 데이터 모델은 직업과 학생을 단순 many-to-many로 연결하지 말고 assignment/contract 객체를 둬야 한다.
+
+### F. 장기과정 설계
+공식 운영 가이드는 여러 모듈을 한꺼번에 열지 말 것을 권한다. 이것은 cognitive load를 다루는 제품정책이다.
+
+Class Money 설정에는:
+- 권장 학습순서
+- 현재 단계
+- 다음 추천모듈
+- 예상 소요시간
+이 있으면 좋다.
+
+### G. 대시보드
+교사 대시보드에서 progress, recent activity, account/transactions를 함께 본다.
+
+Class Money는 다음 세 층을 구분:
+1. 운영이상: 미처리/실패
+2. 경제상태: 유통량/잔액
+3. 학습진도: 어떤 개념을 경험했는가
+
+한 화면에서 섞더라도 의미를 색이나 탭으로 분리한다.
+
+### H. Leaderboard
+Banqer는 savings/net worth/achievement 등 순위를 제공하고 일부는 끌 수 있다. Class Money는 이것을 그대로 쓰지 않는 편이 낫다.
+
+대안:
+- 개인 성장그래프
+- 공동목표
+- 비금전 학습배지
+- 목표 달성자 익명 수
+
+경제적 자산은 공개경쟁에 적합한 데이터가 아니다.
+
+### I. 기기 환경
+사례연구에서 25명에 14대 Chromebook 같은 환경이 언급된다.
+
+Class Money는 1:1 기기를 필수로 하지 않는다.
+- 교사단독 모드
+- 모둠 순환
+- 빠른 학생전환
+- 출력 가능한 명세서
+가 필요하다.
+
+### J. 국가·교육과정 현지화
+Banqer는 지역별 retirement, property, insurance 등 개념이 다르다.
+
+Class Money는 한국 초등에 맞춰:
+- 경제생활
+- 합리적 선택
+- 금융문해력
+- 공동체와 세금
+을 우선하고 성인 금융상품을 과도하게 모사하지 않는다.
+
+### K. 제품결정
+Adopt:
+- 모듈별 학습
+- 단계적 공개
+- 직업 계약상태
+- 진행도 대시보드
+- 개념→체험→회고
+
+Adapt:
+- expenses
+- property
+- insurance
+- transport
+
+Avoid by default:
+- 자산 leaderboard
+- 초등에 과한 성인금융 구조
+
+### L. 남은 실측
+- 모듈 활성화 UI
+- 학생 첫 진입 순서
+- quiz와 경제보상의 관계
+- teacher preview
+- progress status 계산방식
+- student dashboard의 메뉴밀도
+- leaderboard 기본 노출과 비활성화 경험
