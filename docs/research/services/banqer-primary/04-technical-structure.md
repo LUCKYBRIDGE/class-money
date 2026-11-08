@@ -1,41 +1,94 @@
 # Banqer Primary — 파일·폴더·기술 구조
 
-**증거 수준:** B — 공식 조직 부분 source, 현재 Primary 본체는 비공개
+**증거 수준:** B — 공식 조직 부분 source는 확인, 현재 Primary 본체 source는 비공개
 
-## 공개 source 판정
+## 공식 GitHub organization
 
-- 공식 GitHub org Banqer 확인.
-- Banqer/angular_sample은 README상 과거 Banqer High obsolete interview sample.
-- ui-select-banqer도 historical artifact.
-- 현재 Primary stack 근거로 사용하지 않음.
+- github.com/Banqer
 
-## 외부에서 확인되는 기술 모듈
+## 직접 확인한 공개 repository
 
-- Teacher Dashboard
-- Student Dashboard
-- Module Registry
-- Classroom Module State
-- Store
-- Cart/Checkout
-- Inventory
-- Fulfillment/Claim
-- Learning Content
-- Simulation Engine
+### Banqer/angular_sample
 
-## 파일·폴더 기록 원칙
+실제 확인한 파일:
 
-- 실제 공식 repository가 있으면 **실제 path와 file name**을 적는다.
-- 제품 본체 source가 비공개면 위 목록은 실제 folder tree가 아니라 외부 동작으로 확인되는 **logical module boundary**다.
-- framework, database, backend language, hosting을 근거 없이 추정하지 않는다.
+```text
+angular_sample/
+├─ README.md
+├─ simple-quiz.component.html
+├─ simple-quiz.component.ts
+└─ simple-quiz.styl
+```
 
-## 현재 확인하지 못한 내부구조
+README가 이 코드를:
+- 과거 Banqer High의 obsolete code
+- interview discussion용 sample
 
-- 현재 Primary frontend/backend stack
-- 실제 module navigation
-- DB/API
-- responsive 세부
+이라고 명시한다.
+
+따라서 **현재 Banqer Primary의 source tree가 아니다.**
+
+simple-quiz.component.ts에서 확인되는 과거 sample 패턴:
+- Angular Component
+- Input questions
+- Output completion event
+- BrowserStorage로 question index 저장
+- correct / incorrect callback
+- question validation
+
+### Banqer/ui-select-banqer
+
+Angular 1.5용 historical working copy. 현재 Primary stack 근거로 쓰지 않는다.
+
+## 현재 제품에서 외부로 확인되는 logical module
+
+```text
+Banqer Primary
+├─ Teacher Dashboard
+├─ Student Dashboard
+├─ Module / Expansion Registry
+├─ Classroom Module State
+├─ Banking
+├─ Savings
+├─ Tax
+├─ Property / Insurance / Transport
+├─ Class Store
+│  ├─ Inventory
+│  ├─ Cart
+│  ├─ Checkout
+│  └─ Fulfillment / Claim
+└─ Learning Content
+   ├─ Video
+   ├─ Quiz
+   └─ Group Activity
+```
+
+이 tree는 실제 내부 폴더명이 아니라 공개 동작에서 확인되는 모듈 경계다.
+
+## 기술적으로 중요한 상태 분리
+
+- Module Enabled / Disabled
+- Activity Open / Closed
+- Payment Completed
+- Fulfillment Pending / Claimed / Declined
+
+## Class Money 기술 대응
+
+```text
+domain/
+├─ modules/
+├─ classroom-module-state/
+├─ store/
+├─ inventory/
+├─ orders/
+├─ fulfillment/
+└─ learning-content/
+```
+
+## 현재 확인 불가
+- 현재 frontend framework
+- backend/runtime
+- database
+- API topology
 - scheduler/queue
-
-## Class Money 구현으로 옮길 때
-
-이 서비스의 내부 구현을 복제하지 않는다. 확인된 제품 경계와 상태모델만 우리 도메인 모듈 설계의 참고로 사용한다.
+- hosting
