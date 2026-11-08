@@ -12,6 +12,7 @@
 - [서비스별 Product Anatomy / Dossier](docs/research/services/dossiers/README.md): 역할·도메인 객체·기능 의존관계·플로우·상태·자동화·권한·복구까지 서비스 전체 구조를 해부.
 - [복잡성 해소 패턴 종합](docs/research/synthesis/complexity-resolution-patterns.md): 여러 서비스에서 반복되는 UX/구조 패턴을 Class Money 설계 언어로 추출.
 - [직접 사이트·리포지토리 관찰](docs/research/direct-inspection/README.md): 공개 사이트, 공식 Help/PDF, 공식 GitHub source를 실제로 열어 확인한 증거와 기존 설계 보정.
+- [앱별 파일·폴더·기술 구조](docs/research/technical-structure/README.md): 공개 source 여부를 구분하고 실제 repository tree, 기술 스택, 외부 기술 모듈, 확인 불가 내부구조를 앱별로 정리.
 - [서비스별 UI·UX / 복잡성 해소 구조](docs/research/services/ux/README.md): 기능이 얽히는 방식, 정보구조, 화면 상태, 승인·오류복구, 모바일·공유기기 UX를 서비스별 독립 분석.
 - [경제 엔진·정책](docs/product/economy-engine-and-policies.md): 경제 밸런스 계산, 거래 정책, 학생 공정성.
 - [Economy Kernel v4](docs/architecture/economy-kernel-v4.md): 이중원장, account, hold, scheduler, reversal, 정책 버전 등 거래 커널 설계.
