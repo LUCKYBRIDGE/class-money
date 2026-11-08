@@ -24,6 +24,10 @@
 
 ## 문서
 
+- [서비스별 직접 관찰 인덱스](services/README.md)
+- [Repository 직접 분석 인덱스](repositories/README.md)
+- [직접 관찰 증거 매트릭스](evidence-matrix.md)
+
 - [Craft Anything 저장소 직접 분석](craft-anything-repository.md)
 - [경쟁 서비스 공개 사이트 직접 관찰](service-sites-2026-11-08.md)
 - [공개 GitHub 저장소 감사](public-repository-audit.md)
