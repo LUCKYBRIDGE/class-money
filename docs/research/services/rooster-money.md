@@ -169,3 +169,106 @@ Class Money의 경제는 이벤트가 아니라:
 - https://roostermoney.com/feature/chores-guide/
 - https://roostermoney.com/pocket-money-index-hub/
 - https://roostermoney.com/pocket-money-chores-list/
+
+
+## 심화 보완: 12개 분석축
+
+### A. 사용자와 권한
+Rooster Money는 보호자가 allowance와 chore 규칙을 만들고 아이가 수행상태를 확인하는 가정경제 구조다.
+
+Class Money에서는 보호자 대신 교사가 규칙을 갖지만, 교사의 생활통제 도구로 바뀌지 않도록 경제보상 가능한 과업의 범위를 좁혀야 한다.
+
+### B. 과업 유형
+Allowance chores와 Extra earners 구분은 매우 좋은 도메인 모델이다.
+
+Class Money 대응:
+- responsibility: 보상 없음 또는 기본역할에 포함
+- job duty: 정기급여
+- quest: 추가보상
+- volunteer/community: 비금전 인정 가능
+
+### C. 지급 정책
+미완료 시 전액, 비례, 수동결정 등 정책이 가능하다.
+
+Class Money는 직업마다:
+- fixed
+- completion-based
+- teacher-reviewed
+정책을 선택하게 할 수 있다.
+
+### D. 공정성
+학생마다 맡은 일의 난도와 수행기회가 다르다.
+
+자동 비례급여를 켤 경우:
+- 수행기준 명확성
+- 결석 처리
+- 특수한 지원 필요
+- 역할 자체의 기회차이
+를 고려해야 한다.
+
+따라서 급여삭감은 기본 기능이 아니라 명시적 설정이어야 한다.
+
+### E. 반복주기
+용돈 시스템의 핵심은 주기성이다.
+
+Class Money는 달력에서:
+- 이번 지급기간
+- 다음 Payday
+- 미완료 조건
+을 명확히 보여줘야 한다.
+
+### F. Extra earning의 희소성
+추가 일감이 일부 학생에게만 집중되면 격차가 커진다.
+
+Class Money Quest:
+- 개인별 주간 수락한도
+- 선착순/모두/지정 유형
+- 최근 참여 적은 학생 우선 옵션
+을 검토할 수 있다.
+
+### G. 보상 없는 활동
+모든 classroom duty에 돈을 붙이지 않는 것이 중요하다.
+
+경제앱이 공동체 윤리를 잠식하지 않도록:
+'당연히 해야 할 일'과 '추가 경제활동'을 분리하는 교육 가이드가 필요하다.
+
+### H. 저학년 단순화
+가정용 앱의 star/단순 활동 경험은 저학년 경제입문의 참고가 된다.
+
+Class Money 저학년 모드:
+- 정수 화폐
+- 큰 아이콘
+- 저축/소비 두 가지
+- 복잡한 세금/이자 숨김
+
+### I. 데이터모델
+Task와 Payment rule을 분리한다.
+한 과업이 돈 없는 책임일 수도, 정기급여 조건일 수도, 별도 보상일 수도 있기 때문이다.
+
+### J. 실패모드
+- 완료 체크 누락
+- 결석 학생 자동 미지급
+- 같은 chore 중복 승인
+- 지급기간 경계에서 중복
+- extra earner 선착순 충돌
+
+### K. 제품결정
+Adopt:
+- 기본책임/추가소득 구분
+- 지급정책 선택
+- 반복주기
+- due date
+
+Adapt:
+- partial pay
+
+Avoid:
+- 일상의 모든 행동을 가격화
+
+### L. 남은 실측
+- chore 유형 전환
+- incomplete allowance 처리
+- approval
+- recurring chore
+- child view의 남은 일정
+- 저학년 사용성
