@@ -17,6 +17,7 @@
 - [NatWest Rooster Money](rooster-money/README.md)
 - [Revolut Kids & Teens](revolut-kids-teens/README.md)
 - [토스 유스](toss-youth/README.md)
+- [반짝 모의투자](banjjak-stock/README.md)
 - [YNAB](ynab/README.md)
 
 

@@ -15,6 +15,7 @@
 - [NatWest Rooster Money](rooster-money/README.md) — 정기 용돈·과업 루틴
 - [Revolut Kids & Teens](revolut-kids-teens/README.md) — 아동 자율성·보호자 승인
 - [토스 유스](toss-youth/README.md) — 한국 아동·청소년 금융 정보구조
+- [반짝 모의투자](banjjak-stock/README.md) — 국내 교실용 국장·미장·환전 모의투자
 - [YNAB](ynab/README.md) — 목적 기반 예산·거래 모델
 
 각 폴더 공통 구조:

@@ -12,6 +12,8 @@
 - [ClassCents](classcents.md)
 - [My Classroom Economy](my-classroom-economy.md)
 
+- [반짝 모의투자](banjjak-stock.md)
+
 ## 인접 UX / 아동 금융
 - [ClassDojo](classdojo.md)
 - [Greenlight](greenlight.md)

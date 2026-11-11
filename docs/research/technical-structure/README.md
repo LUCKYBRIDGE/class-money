@@ -32,6 +32,7 @@
 - [NatWest Rooster Money](rooster-money.md) — C
 - [Revolut Kids & Teens](revolut-kids-teens.md) — C
 - [토스 유스](toss-youth.md) — C
+- [반짝 모의투자](banjjak-stock.md) — C+
 - [YNAB](ynab.md) — A/B
 
 ## 분석 도구
