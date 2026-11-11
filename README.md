@@ -5,6 +5,8 @@
 초등학교 교실에서 학생이 **일·소득·소비·저축·지출·선택·공동체 경제**를 체험하고 교사는 간단한 조작으로 학급 경제를 운영할 수 있게 하는 웹 앱을 기획합니다.
 
 ## 문서 안내
+- [앱·웹 분석 및 기술구조 종합](docs/research/master-analysis-summary.md): 지금까지 분석한 서비스, 실제 공개 source/file tree, UI·UX·상태·기술 패턴을 놀머니 관점에서 압축 정리.
+- [놀머니 제품 아이디어·설계 청사진](docs/product/nol-money-product-blueprint.md): Core Economy, 실제시장, 가상 시나리오시장, 가상기업, 학습루프, 기술모듈, 단계별 출시 방향.
 - [앱·웹별 Canonical 분석 폴더](docs/research/services/CANONICAL.md): 서비스마다 페이지·내비게이션, UI·UX·버튼, 기능·상태·흐름, 기술·파일 구조, 복잡성 해결방식, 근거를 동일한 폴더 규격으로 정리.
 - [서비스 벤치마킹](docs/research/benchmark-2026-11.md): 공식 출처 기반 사례, 참고할 기능, 한계, 검증 상태.
 - [심층 비교 분석 v2](docs/research/deep-analysis-2026-11.md): 확인된 사실/시사점/비도입 요소, 서비스별 교육·운영 분석.
